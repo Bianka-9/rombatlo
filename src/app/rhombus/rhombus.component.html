@@ -1,0 +1,34 @@
+<!--
+* File: rhombus.component.html
+* Author: Nagy Bianka
+* Copyright: 2026, Nagy Bianka
+* Group: Szoft II/N
+* Date: 2026-10-14
+* Github: https://github.com/Bianka-9/
+* Licenc: MIT
+-->
+
+<h1>Rombusz területének számítása</h1>
+
+
+<form [formGroup]="rhombusForm" (ngSubmit)="calculate()" (reset)="result.set('')" class="space-y-3">
+    <article>A képlet így számol: (e * f) /2</article>
+
+<div>
+    <label for="e_value" class="label">e átló értéke: </label>
+    <input id="e_value" type="text" formControlName="e_value" class="form-input">
+
+    <label for="f_value" class="label">f átló értéke: </label>
+    <input id="f_value" type="text" formControlName="f_value" class="form-input">
+</div>
+
+    <button class="btn" type="submit">Számítás</button>
+    <button class="btn" type="reset">Törlés</button>
+
+<div>
+    <label for="result" class="label">Eredmény: </label>
+    <input id="result" type="text" [value]="result()" disabled class="form-input">
+    <img src="../img_rhombus.png" alt="image of a rhombus">
+</div>
+ 
+</form>
